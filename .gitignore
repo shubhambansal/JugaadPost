@@ -2,6 +2,12 @@
 #
 .DS_Store
 
+#visual code editor
+.vscode
+
+#React Native
+package-lock.json
+
 # Xcode
 #
 build/
@@ -30,7 +36,6 @@ local.properties
 *.iml
 
 # node.js
-#
 node_modules/
 npm-debug.log
 yarn-error.log

@@ -20,22 +20,27 @@ We believe ReactNative is the future of Mobile & Web.
 * <span style="color:yellow">improvement</span>_name_of_imporvement
 * <span style="color:blue">task</span>_name_of_task
 
-## [How to run locally](https://docs.expo.io/versions/v35.0.0/introduction/walkthrough/)
+## Android Standalone App
+_NOTE: Android 4.4 i.e. Api level 19 onwards_
+
+### How to run?
 1. Open terminal and navigate to project root directory
-2. **react-native run-android** or **react-native run-ios**
-3. Install expo client app on Android or iOS device
-4. Open Expo app on device and scan the QR code dispayed in terminal
+2. **react-native run-android**
+
+### Steps to prepare for Release
+
+Coming Soon...
 
 
-## Build for Android
-_NOTE: Expo supports Android 4.4 i.e. Api level 19 onwards_
+## iOS Standalone App
 
-### <span style="color:green">Build Android APK</span>
-### <span style="color:green">Build Android Bundle</span>
+### How to run?
+1. Open terminal and navigate to project root directory
+2. **react-native run-ios**
 
+### Steps to prepare for Release
 
-## Build for iOS
-
+Coming Soon...
 
 ## Miscellaneous
 * [npm](https://www.npmjs.com/get-npm) Node package manager
