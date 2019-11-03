@@ -20,6 +20,9 @@ We believe ReactNative is the future of Mobile & Web.
 * <span style="color:yellow">improvement</span>_name_of_imporvement
 * <span style="color:blue">task</span>_name_of_task
 
+### How to run lint?
+npm run lint
+
 ## Android Standalone App
 _NOTE: Android 4.4 i.e. Api level 19 onwards_
 
