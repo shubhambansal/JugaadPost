@@ -43,6 +43,7 @@ Coming Soon...
 Coming Soon...
 
 ## Miscellaneous
+* [npx](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner) New Node package manager
 * [npm](https://www.npmjs.com/get-npm) Node package manager
 * [Yarn](https://engineering.fb.com/web/yarn-a-new-package-manager-for-javascript/) is a npm client
 
