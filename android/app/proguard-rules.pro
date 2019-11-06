@@ -8,3 +8,8 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+
+# https://rnfirebase.io/docs/v5.x.x/installation/android
+-keep class io.invertase.firebase.** { *; }
+-dontwarn io.invertase.firebase.**

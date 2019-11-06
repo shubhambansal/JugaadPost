@@ -1,7 +1,44 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, StatusBar, Text, TextInput} from 'react-native';
 
+import firebase from 'react-native-firebase';
+
 export default class PhoneVerificationScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.unsubscribe = null;
+
+    this.state = {
+      user: null,
+      codeInput: '',
+      phoneNumber: '+49',
+      confirmResult: null,
+    };
+  }
+
+  componentDidMount() {
+    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      console.log('Inside onAuthStateChanged', user);
+
+      if (user) {
+        this.setState({user: user.toJSON()});
+      } else {
+        this.setState({
+          user: null,
+          codeInput: '',
+          phoneNumber: '+49',
+          confirmResult: null,
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.unsubscribe) {
+      this.unsubscribe();
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
