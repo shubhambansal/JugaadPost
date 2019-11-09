@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, StatusBar, Image, Text} from 'react-native';
-import {Button} from 'native-base';
+import {StyleSheet, StatusBar, Image} from 'react-native';
+import {Container, Content, Text} from 'native-base';
 
 import {loadSettings} from '../storage/settingsStore';
 
@@ -10,11 +10,17 @@ export default class SplashScreen extends Component {
 
     const setting = await loadSettings();
 
-    // if (setting === null) {
-    //   console.log('Navigating to  Phone Verification');
-    //   this.props.navigation.navigate('PhoneVerification');
-    // }
+    setTimeout(() => {
+      if (setting === null) {
+        console.log('Navigating to  Phone Verification');
+        this.props.navigation.navigate('PhoneVerification');
+      } else {
+        this.props.navigation.navigate('Aapp');
+      }
+    }, 2500);
   }
+
+  goToHome() {}
 
   componentWillUnmount() {
     console.log('Splash : componentWillUnmount fn');
@@ -22,65 +28,40 @@ export default class SplashScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Container style={styles.containerStyle}>
         <StatusBar hidden={true} />
-        <Image
-          source={require('../assets/images/logo.jpeg')}
-          resizeMode="cover"
-          style={styles.image}
-        />
-        <Text style={styles.text}>Carry &amp; Care</Text>
-
-        <Button
-          style={styles.materialButtonDanger}
-          onPress={() => this.props.navigation.navigate('App')}>
-          <Text>Home</Text>
-        </Button>
-
-        <Button
-          style={styles.materialButtonDanger}
-          onPress={() => this.props.navigation.navigate('PhoneVerification')}>
-          <Text>Phone verification</Text>
-        </Button>
-
-        <Button
-          style={styles.materialButtonDanger}
-          onPress={() => this.props.navigation.navigate('CodeVerification')}>
-          <Text>Code verification</Text>
-        </Button>
-      </View>
+        <Content contentContainerStyle={styles.contentStyle}>
+          <Image
+            source={require('../assets/images/logo.png')}
+            resizeMode="cover"
+            style={styles.imageStyle}
+          />
+          <Text style={styles.text}>Carry &amp; Care</Text>
+        </Content>
+      </Container>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerStyle: {
     backgroundColor: '#ffffff',
     flex: 1,
+    alignItems: 'center',
   },
-  image: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    marginTop: 164,
-    alignSelf: 'center',
+  contentStyle: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  imageStyle: {
+    width: 128,
+    height: 128,
   },
   text: {
-    width: 195,
-    height: 30,
-    color: '#121212',
+    color: '#000000',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    fontSize: 20,
-    fontFamily: 'roboto-regular',
-    textAlign: 'center',
-    marginTop: 15,
-    alignSelf: 'center',
-  },
-  materialButtonDanger: {
-    width: 100,
-    height: 36,
-    marginTop: 29,
-    alignSelf: 'center',
+    fontSize: 18,
+    fontFamily: 'roboto-medium',
   },
 });

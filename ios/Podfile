@@ -35,7 +35,6 @@ target 'JugaadPost' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'Firebase/Analytics'
 
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
   target 'JugaadPostTests' do
     inherit! :search_paths
